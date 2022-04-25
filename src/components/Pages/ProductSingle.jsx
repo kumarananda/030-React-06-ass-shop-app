@@ -1,0 +1,242 @@
+import React from 'react'
+import img1 from '../../_assets/images/shop/single-1.jpg'
+import img2 from '../../_assets/images/shop/single-2.jpg'
+import img3 from '../../_assets/images/shop/single-3.jpg'
+import img4 from '../../_assets/images/shop/single-4.jpg'
+import product1 from '../../_assets/images/shop/1.jpg'
+import product2 from '../../_assets/images/shop/2.jpg'
+import product3 from '../../_assets/images/shop/3.jpg'
+import product4 from '../../_assets/images/shop/4.jpg'
+
+const ProductSingle = () => {
+  return (
+    <>
+        <section>
+            <div className="container">
+                <div className="single-product-details">
+                <div className="row">
+                    <div className="col-md-6">
+                    <div data-options="{&quot;animation&quot;: &quot;slide&quot;, &quot;controlNav&quot;: true}" className="flexslider nav-inside control-nav-dark">
+                        <ul className="slides">
+                            <img src={ img1 } alt=""/>
+                            {/* <li>
+                                <img src={ img1 } alt=""/>
+                            </li>
+                            <li>
+                                <img src={ img2 } alt=""/>
+                            </li>
+                            <li>
+                                <img src={ img3 } alt=""/>
+                            </li>
+                            <li>
+                                <img src={ img4 } alt=""/>
+                            </li> */}
+                        </ul>
+                    </div>
+                    </div>
+                    <div className="col-md-5 col-md-offset-1">
+                    <div className="title mt-0">
+                        <h2>Notch Blazer in Longline<span className="red-dot"></span></h2>
+                        <p className="m-0">Free Shipping Worldwide</p>
+                    </div>
+                    <div className="single-product-price">
+                        <div className="row">
+                        <div className="col-xs-6">
+                            <h3><del>$29.99</del><span>$24.99</span></h3>
+                        </div>
+                        <div className="col-xs-6 text-right"><span className="rating-stars">              <i className="ti-star full"></i><i className="ti-star full"></i><i className="ti-star full"></i><i className="ti-star full"></i><i className="ti-star"></i><span className="hidden-xs">(3 Reviews)</span></span>
+                        </div>
+                        </div>
+                    </div>
+                    <div className="single-product-desc">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis repellat iste natus at impedit quo consequuntur, quam, vel saepe voluptatum minus temporibus excepturi aspernatur labore molestiae fugit tempora veritatis unde.</p>
+                    </div>
+                    <div className="single-product-add">
+                        <form action="#" className="inline-form">
+                        <div className="input-group">
+                            <input type="number" placeholder="QTY" value="1" min="1" className="form-control"/><span className="input-group-btn"><button type="button" className="btn btn-color">Add to Cart<i className="ti-bag"></i></button></span>
+                        </div>
+                        </form>
+                    </div>
+                    <div className="single-product-list">
+                        <ul>
+                        <li><span>Sizes:</span> S, M, L, XL</li>
+                        <li><span>Colors:</span> Blue, Red, Grey</li>
+                        <li><span>Category:</span><a href="#">Blazers</a>
+                        </li>
+                        <li><span>Tags:</span><a href="#">Outfit</a>-<a href="#">Jeans</a>
+                        </li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+                
+                </div>
+                <div className="product-tabs">
+                <ul role="tablist" className="nav nav-tabs">
+                    <li role="presentation" className="active"><a href="#first-tab" role="tab" data-toggle="tab">Description</a>
+                    </li>
+                    <li role="presentation"><a href="#second-tab" role="tab" data-toggle="tab">Sizes</a>
+                    </li>
+                    <li role="presentation"><a href="#third-tab" role="tab" data-toggle="tab">Reviews (3)</a>
+                    </li>
+                </ul>
+                <div className="tab-content">
+                    <div id="first-tab" role="tabpanel" className="tab-pane active">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum hic doloribus dolore explicabo, a voluptate optio culpa, aut nulla voluptatem sit nam sed molestias adipisci! Eius nulla beatae, quidem quae. Praesentium eveniet ullam quos
+                        accusamus, ea nemo cupiditate. Nemo harum sit, necessitatibus voluptates, sapiente dolorum minima, placeat explicabo consequuntur at neque deserunt.</p>
+                    <p>Quidem illum, enim aut, minus nesciunt, distinctio inventore sunt autem numquam eveniet non asperiores unde! Corrupti modi minima doloremque, illum aperiam nemo.</p>
+                    </div>
+                    <div id="second-tab" role="tabpanel" className="tab-pane">
+                    <table className="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th className="upper">Size</th>
+                            <th className="upper">Bust (CM)</th>
+                            <th className="upper">Waist (CM)</th>
+                            <th className="upper">Hips (CM)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>XS</td>
+                            <td>78</td>
+                            <td>60</td>
+                            <td>83</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td>80</td>
+                            <td>62</td>
+                            <td>86</td>
+                        </tr>
+                        <tr>
+                            <td>M</td>
+                            <td>88</td>
+                            <td>65</td>
+                            <td>88</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <div id="third-tab" role="tabpanel" className="tab-pane">
+                    <div id="comments">
+                        <ul className="comments-list">
+                        <li className="rating">
+                            <h5 className="upper">Jesse Pinkman - <span className="rating-stars"><i className="ti-star full"></i><i className="ti-star full"></i><i className="ti-star full"></i><i className="ti-star full"></i><i className="ti-star"></i></span></h5><span className="comment-date">Posted on 29 September at 10:41</span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo voluptatem quo sit. Sint fugit quidem totam similique suscipit animi veniam reiciendis, unde facere quia, optio, at ad possimus perferendis asperiores.</p>
+                        </li>
+                        <li className="rating">
+                            <h5 className="upper">Rust Cohle - <span className="rating-stars"><i className="ti-star full"></i><i className="ti-star full"></i><i className="ti-star full"></i><i className="ti-star full"></i><i className="ti-star"></i></span></h5><span className="comment-date">Posted on 29 September at 10:41</span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi aspernatur vero dolorum asperiores ratione obcaecati atque quidem aliquid dicta illo, quod, similique suscipit maiores, aperiam expedita cum. Ut fugiat, dolores.</p>
+                        </li>
+                        <li className="rating">
+                            <h5 className="upper">Arya Stark - <span className="rating-stars"><i className="ti-star full"></i><i className="ti-star full"></i><i className="ti-star full"></i><i className="ti-star full"></i><i className="ti-star full"></i></span></h5><span className="comment-date">Posted on 29 September at 10:41</span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi aspernatur vero dolorum asperiores ratione obcaecati atque quidem aliquid dicta illo, quod, similique suscipit maiores, aperiam expedita cum. Ut fugiat, dolores.</p>
+                        </li>
+                        </ul>
+                    </div>
+                    <div id="respond">
+                        <h5 className="upper">Leave a rating</h5>
+                        <div className="comment-respond">
+                        <form className="comment-form">
+                            <div className="form-double">
+                            <div className="form-group">
+                                <input name="author" type="text" placeholder="Name" className="form-control"/>
+                            </div>
+                            <div className="form-group last">
+                                <input name="email" type="text" placeholder="Email" className="form-control"/>
+                            </div>
+                            </div>
+                            <div className="form-group">
+                            <div className="form-select">
+                                <select className="form-control">
+                                <option value="" selected="selected">Chose a rating</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                </select>
+                            </div>
+                            </div>
+                            <div className="form-group">
+                            <textarea placeholder="Comment" className="form-control"></textarea>
+                            </div>
+                            <div className="form-submit text-right">
+                            <button type="button" className="btn btn-color-out">Post Comment</button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div className="related-products">
+                <h5 className="upper">Related Products</h5>
+                <div className="row">
+                    <div className="col-md-3 col-sm-6">
+                    <div className="shop-product">
+                        <div className="product-thumb">
+                        <a href="#">
+                            <img src={ product1 } alt=""/>
+                        </a>
+                        </div>
+                        <div className="product-info">
+                        <h4 className="upper"><a href="#">Premium Notch Blazer</a></h4><span>$79.99</span>
+                        <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div className="col-md-3 col-sm-6">
+                    <div className="shop-product">
+                        <div className="product-thumb">
+                        <a href="#">
+                            <img src={ product2 } alt=""/>
+                        </a>
+                        </div>
+                        <div className="product-info">
+                        <h4 className="upper"><a href="#">Premium Suit Blazer</a></h4><span>$199.99</span>
+                        <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div className="col-md-3 col-sm-6">
+                    <div className="shop-product">
+                        <div className="product-thumb">
+                        <a href="#">
+                            <img src={ product3 } alt=""/>
+                        </a>
+                        </div>
+                        <div className="product-info">
+                        <h4 className="upper"><a href="#">Vintage Sweatshirt</a></h4><span>$99.99</span>
+                        <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div className="col-md-3 col-sm-6">
+                    <div className="shop-product">
+                        <div className="product-thumb">
+                        <a href="#">
+                            <img src={product4 } alt=""/>
+                        </a>
+                        </div>
+                        <div className="product-info">
+                        <h4 className="upper"><a href="#">Longline Jersey Jacket</a></h4><span>$19.99</span>
+                        <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+    </>
+  )
+}
+
+export default ProductSingle;

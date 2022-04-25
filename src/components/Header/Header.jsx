@@ -4,7 +4,7 @@ import logo from '../../_assets/images/logo_light.png'
 const Header = () => {
   return (
     <>
-        {/* <!-- Navigation Bar--> */} 
+        {/* * <!-- Navigation Bar--> * */}
         <header id="topnav">
             <div className="container">
                 {/* <!-- Logo container--> */} 
@@ -122,7 +122,7 @@ const Header = () => {
                         <hr/>
                     </div>
                     </div>
-                    {/* <!-- end of container--> */}
+                    
                 </div>
                 </div>
             </div>

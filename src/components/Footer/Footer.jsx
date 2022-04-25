@@ -5,7 +5,7 @@ const Footer = () => {
     <>
 
 
-<footer id="footer-widgets">
+    <footer id="footer-widgets">
       <div className="container">
         <div className="go-top">
           <a href="#top">
