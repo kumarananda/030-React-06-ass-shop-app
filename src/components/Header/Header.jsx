@@ -11,10 +11,10 @@ const Header = () => {
             <div className="container">
                 {/* <!-- Logo container--> */} 
                 <div className="logo">
-                <a href="index-2.html">
+                <Link to="/">
                     <img src={ logo } alt="" className="logo-light"/> 
                     <img src="images/logo_dark.png" alt="" className="logo-dark"/>
-                </a>
+                </Link>
                 </div>
                 {/* <!-- End Logo container--> */}
                 <div className="menu-extras">
@@ -97,16 +97,17 @@ const Header = () => {
                     <Link to="/">Home</Link>
                     </li>
                     <li className="has-submenu">
-                    <Link to="#">blog-page </Link>
+                    <Link to="/contact">blog-page </Link>
                     </li>
+
                     <li className="has-submenu">
                     <Link to="/shop">Shop</Link>
                     </li>
                     <li className="has-submenu">
-                    <Link to="#">pricing</Link>
+                    <Link to="/contact">Pricing</Link>
                     </li>
                     <li className="has-submenu">
-                    <Link to="#">Contact</Link>
+                    <Link to="/contact">Contact</Link>
                     </li>
 
                 </ul>

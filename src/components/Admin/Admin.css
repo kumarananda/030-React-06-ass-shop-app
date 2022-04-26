@@ -1,0 +1,8 @@
+
+.dash-menu li a {
+    display: block;
+    padding: 10px 8px;
+}
+.dash-menu li  {
+    padding: 0 0;
+}

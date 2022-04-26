@@ -8,21 +8,33 @@ import Footer from './components/Footer/Footer';
 import ProductSingle from './components/Pages/ProductSingle';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './components/Pages/Home';
+import Contact from './components/Contact/Contact';
+import Dashbord from './components/Admin/Dashbord'
+import Products from './components/Admin/Products';
+import Category from './components/Admin/Category';
+import Tag from './components/Admin/Tag';
 
 
 function App() {
   return (
     <>
     
-      <BrowserRouter>
         <Header/>
           <Routes>
             <Route path='/'element={ <Home/>} />
             <Route path='/shop'element={ <Shop/>} />
             <Route path='/shop/:id'element={ <ProductSingle/>} />
+            <Route path='/contact'element={ <Contact/>} />
+
+
+            <Route path='/admin' element={<Dashbord/>} >
+              <Route path='/admin/products' element={ <Products/>} />
+              <Route path='/admin/category' element={ <Category/>} />
+              <Route path='/admin/tag' element={ <Tag/>} />
+            </Route>
+           
           </Routes>
-        <Footer></Footer>
-      </BrowserRouter>
+        <Footer/>
 
     
     </>
