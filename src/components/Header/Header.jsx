@@ -1,5 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../../_assets/images/logo_light.png'
+import './Header.css'
 
 const Header = () => {
   return (
@@ -92,16 +94,19 @@ const Header = () => {
                 {/* <!-- Navigation Menu--> */}
                 <ul className="navigation-menu">
                     <li className="has-submenu">
-                    <a href="#">Home</a>
+                    <Link to="/">Home</Link>
                     </li>
                     <li className="has-submenu">
-                    <a href="#">blog-page </a>
+                    <Link to="#">blog-page </Link>
                     </li>
                     <li className="has-submenu">
-                    <a href="#">pricing</a>
+                    <Link to="/shop">Shop</Link>
                     </li>
                     <li className="has-submenu">
-                    <a href="#">Contact</a>
+                    <Link to="#">pricing</Link>
+                    </li>
+                    <li className="has-submenu">
+                    <Link to="#">Contact</Link>
                     </li>
 
                 </ul>

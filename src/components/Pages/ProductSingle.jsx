@@ -1,12 +1,14 @@
-import React from 'react'
-import img1 from '../../_assets/images/shop/single-1.jpg'
-import img2 from '../../_assets/images/shop/single-2.jpg'
-import img3 from '../../_assets/images/shop/single-3.jpg'
-import img4 from '../../_assets/images/shop/single-4.jpg'
-import product1 from '../../_assets/images/shop/1.jpg'
-import product2 from '../../_assets/images/shop/2.jpg'
-import product3 from '../../_assets/images/shop/3.jpg'
-import product4 from '../../_assets/images/shop/4.jpg'
+import React from 'react';
+import img1 from '../../_assets/images/shop/single-1.jpg';
+import img2 from '../../_assets/images/shop/single-2.jpg';
+import img3 from '../../_assets/images/shop/single-3.jpg';
+import img4 from '../../_assets/images/shop/single-4.jpg';
+
+import product1 from '../../_assets/images/shop/1.jpg';
+import product2 from '../../_assets/images/shop/2.jpg';
+import product3 from '../../_assets/images/shop/3.jpg';
+import product4 from '../../_assets/images/shop/4.jpg';
+
 
 const ProductSingle = () => {
   return (
