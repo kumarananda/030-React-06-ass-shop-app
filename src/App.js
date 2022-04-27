@@ -13,6 +13,7 @@ import Dashbord from './components/Admin/Dashbord'
 import Products from './components/Admin/Products';
 import Category from './components/Admin/Category';
 import Tag from './components/Admin/Tag';
+import Dash from './components/Admin/Dash';
 
 
 function App() {
@@ -26,8 +27,8 @@ function App() {
             <Route path='/shop/:id'element={ <ProductSingle/>} />
             <Route path='/contact'element={ <Contact/>} />
 
-
             <Route path='/admin' element={<Dashbord/>} >
+              <Route path='/admin' element={ <Dash/>} />
               <Route path='/admin/products' element={ <Products/>} />
               <Route path='/admin/category' element={ <Category/>} />
               <Route path='/admin/tag' element={ <Tag/>} />

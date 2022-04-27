@@ -9,7 +9,7 @@ const Dashbord = () => {
       <Container>
         <Col md={3}>
            <ul className="dash-menu" >
-              <li className='list-group-item' ><Link to="/admin">Dashbord:31min</Link></li>
+              <li className='list-group-item' ><Link to="/admin">Dashbord</Link></li>
              <li className='list-group-item' ><Link to="/admin/products">Products</Link></li>
              <li className='list-group-item' ><Link to="/admin/category">Category</Link></li>
              <li className='list-group-item' ><Link to="/admin/tag">Tags</Link></li>
@@ -17,7 +17,9 @@ const Dashbord = () => {
            </ul>
         </Col>
         <Col md={9}>
+
           <Outlet/>
+          
         </Col>
       </Container>
     </section>
