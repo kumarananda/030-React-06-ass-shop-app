@@ -4,7 +4,7 @@ import { Link, Outlet } from 'react-router-dom';
 import './Admin.css'
 
 const Dashbord = () => {
-  return (
+  return ( 
     <section className="dash my-5">
       <Container>
         <Col md={3}>

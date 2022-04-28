@@ -6,7 +6,7 @@ import Shop from './components/Pages/Shop';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import ProductSingle from './components/Pages/ProductSingle';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {  Route, Routes } from 'react-router-dom';
 import Home from './components/Pages/Home';
 import Contact from './components/Contact/Contact';
 import Dashbord from './components/Admin/Dashbord'
