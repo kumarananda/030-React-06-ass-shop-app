@@ -14,6 +14,7 @@ import Products from './components/Admin/Products';
 import Category from './components/Admin/Category';
 import Tag from './components/Admin/Tag';
 import Dash from './components/Admin/Dash';
+import AddTag from './components/Admin/AddTag';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
               <Route path='/admin/products' element={ <Products/>} />
               <Route path='/admin/category' element={ <Category/>} />
               <Route path='/admin/tag' element={ <Tag/>} />
+              <Route path='/admin/add-tag' element={ <AddTag/>} />
             </Route>
            
           </Routes>
