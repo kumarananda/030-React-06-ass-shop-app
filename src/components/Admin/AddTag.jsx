@@ -1,7 +1,7 @@
 
-import Axios from 'axios';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Table, Button, Form } from 'react-bootstrap'
+import { Button, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const AddTag = () => {
@@ -15,16 +15,16 @@ const AddTag = () => {
   }
   console.log(makeSlug('My name is Asraf'));
 
-  // useEffect(() => {
-  //   Axios.post('http://localhost:5050/tags', { 
-  //     id : '',
-  //     name : tags,
-  //     slug : makeSlug(tags)
-  //   })
-  // },[])
+  // 
+  const handleFormSubmit = ( ) => {
+    axios.post('http://localhost:5050/tags', { 
+      id : '',
+      name : tags,
+      slug : makeSlug(tags)
+    })
+  }
 
-
-
+ // 
   
   return (
 
@@ -33,7 +33,7 @@ const AddTag = () => {
       <hr />
       <Link  className='btn btn-primary btn-sm' to={'/admin/tag'}>All Tags</Link>
       <hr />
-      <Form>
+      <Form onSubmit={ handleFormSubmit }>
         <Form.Group my={3}>
           <Form.Control value={tags} onChange={e => setTags(e.target.value) }  type='text' placeholder='Tag Name'/>
         </Form.Group>

@@ -7,7 +7,7 @@ const Tag = () => {
     <>
       <h1>Tag</h1>
       <hr />
-      <Link  className='btn btn-success btn-sm' to={'/admin/add-tag'}>Add New tag</Link>
+      <Link  className='btn btn-success btn-sm' to='/admin/add-tag'>Add New tag</Link>
       <Table>
         <thead>
           <tr>
