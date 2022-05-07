@@ -3,6 +3,8 @@ import { Table, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const Tag = () => {
+
+  
   return (
     <>
       <h1>Tag</h1>

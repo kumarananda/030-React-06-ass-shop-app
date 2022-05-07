@@ -1,8 +1,9 @@
 
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { Button, Form } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 const AddTag = () => {
 
@@ -13,14 +14,19 @@ const AddTag = () => {
     let arr = r.split(' ');
     return arr.join('-').toLowerCase();
   }
-  console.log(makeSlug('My name is Asraf'));
+  // console.log(makeSlug('My name is Asraf'));
 
   // 
-  const handleFormSubmit = ( ) => {
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    let slug = makeSlug(tags);
     axios.post('http://localhost:5050/tags', { 
       id : '',
       name : tags,
-      slug : makeSlug(tags)
+      slug : slug
+    }).then(res => {
+
     })
   }
 
@@ -34,10 +40,11 @@ const AddTag = () => {
       <Link  className='btn btn-primary btn-sm' to={'/admin/tag'}>All Tags</Link>
       <hr />
       <Form onSubmit={ handleFormSubmit }>
-        <Form.Group my={3}>
-          <Form.Control value={tags} onChange={e => setTags(e.target.value) }  type='text' placeholder='Tag Name'/>
+        <Form.Group className='my-3'>
+          <Form.Control value={tags} onChange={ e => setTags( e.target.value) }  type='text' placeholder='Tag Name'/>
         </Form.Group>
-        <Form.Group my={3}>
+        <br />
+        <Form.Group className=' my-3'>
           <Button type='submit' variant='success' className='btn-sm' >Add</Button>
         </Form.Group>
       </Form>
@@ -47,4 +54,4 @@ const AddTag = () => {
   )
 }
 
-export default AddTag
+export default AddTag;

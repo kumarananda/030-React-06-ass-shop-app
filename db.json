@@ -1,11 +1,16 @@
 {
-  "product": [
-    
-  ],
-  "category": [
-    
-  ],
+  "product": [],
+  "category": [],
   "tags": [
-    
+    {
+      "id": 1,
+      "name": "gsgsg dgd",
+      "slug": "gsgsg-dgd"
+    },
+    {
+      "id": 2,
+      "name": "gsgsg dgd",
+      "slug": "gsgsg-dgd"
+    }
   ]
 }
