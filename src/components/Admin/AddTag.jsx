@@ -7,16 +7,17 @@ import { Link } from 'react-router-dom';
 
 const AddTag = () => {
 
+  // set tags
   const [tags, setTags] = useState();
 
   //slug Genarete
-  const makeSlug = (r) => {
-    let arr = r.split(' ');
+  const makeSlug = (data) => {
+    let arr = data.split(' ');
     return arr.join('-').toLowerCase();
   }
   // console.log(makeSlug('My name is Asraf'));
 
-  // 
+  // hadleing from submit
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
@@ -25,9 +26,9 @@ const AddTag = () => {
       id : '',
       name : tags,
       slug : slug
-    }).then(res => {
-
-    })
+    }).then(res =>
+      setTags('')
+    )
   }
 
  // 
