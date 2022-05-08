@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const AddTag = () => {
 
   // set tags
-  const [tags, setTags] = useState();
+  const [tag, setTag] = useState();
 
   //slug Genarete
   const makeSlug = (data) => {
@@ -21,13 +21,13 @@ const AddTag = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    let slug = makeSlug(tags);
+    let slug = makeSlug(tag);
     axios.post('http://localhost:5050/tags', { 
       id : '',
-      name : tags,
+      name : tag,
       slug : slug
     }).then(res =>
-      setTags('')
+      setTag('')
     )
   }
 
@@ -42,7 +42,7 @@ const AddTag = () => {
       <hr />
       <Form onSubmit={ handleFormSubmit }>
         <Form.Group className='my-3'>
-          <Form.Control value={tags} onChange={ e => setTags( e.target.value) }  type='text' placeholder='Tag Name'/>
+          <Form.Control value={tag} onChange={ e => setTag( e.target.value) }  type='text' placeholder='Tag Name'/>
         </Form.Group>
         <br />
         <Form.Group className=' my-3'>

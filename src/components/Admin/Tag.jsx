@@ -5,6 +5,17 @@ import { Link } from 'react-router-dom'
 
 const Tag = () => {
 
+  const [tags, setTags] = useState(); 
+
+
+  // get data 
+  useEffect( () => {
+    console.log(tags);
+    axios.get('http://localhost:5050/tags').then( res => {
+      setTags( res.data);
+    })
+  },[]);
+
   
   return (
     <>
@@ -14,22 +25,36 @@ const Tag = () => {
       <Table>
         <thead>
           <tr>
-            <td>#</td>
-            <td>Name</td>
-            <td>Slug</td>
-            <td>Action</td>
+            <th>#</th>
+            <th>Name</th>
+            <th>Slug</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          <td>1</td>
-          <td>Men</td>
-          <td>men</td>
-          <td>
-            <Button variant='info' className='btn-sm '>View</Button>
-            <Button variant='warning' className='btn-sm '>Edit</Button>
-            <Button variant='danger' className='btn-sm '>Delete</Button>
-          </td>
+
+          {/* {
+            tags.map( (data, index) => 
+             */
+            <tr>
+              <td>#</td>
+              <td>Men</td>
+              <td>men</td>
+              <td>
+                <Button variant='info' className='btn-sm '>View</Button>
+                <Button variant='' className='btn-warning btn-sm '>Edit</Button>
+                <Button variant='danger' className='btn-sm '>Delete</Button>
+              </td>
+            </tr>
+            
+            
+            // )
+          }
+         
+
+
         </tbody>
+        <tbody></tbody>
       </Table>
     
     
