@@ -5,16 +5,16 @@ import { Link } from 'react-router-dom'
 
 const Tag = () => {
 
-  const [tags, setTags] = useState(); 
+  const [tags, setTags] = useState([]); 
 
-
+// console.log(tags);
   // get data 
   useEffect( () => {
     console.log(tags);
     axios.get('http://localhost:5050/tags').then( res => {
       setTags( res.data);
     })
-  },[]);
+  },[tags]);
 
   
   return (
@@ -32,23 +32,24 @@ const Tag = () => {
           </tr>
         </thead>
         <tbody>
+ 
 
-          {/* {
+          {
             tags.map( (data, index) => 
-             */
+            
             <tr>
-              <td>#</td>
-              <td>Men</td>
-              <td>men</td>
-              <td>
-                <Button variant='info' className='btn-sm '>View</Button>
-                <Button variant='' className='btn-warning btn-sm '>Edit</Button>
-                <Button variant='danger' className='btn-sm '>Delete</Button>
-              </td>
-            </tr>
+            <td>#</td>
+            <td>Men</td>
+            <td>men</td>
+            <td>
+              <Button variant='info' className='btn-sm '>View</Button>
+              <Button variant='' className='btn-warning btn-sm '>Edit</Button>
+              <Button variant='danger' className='btn-sm '>Delete</Button>
+            </td>
+          </tr>
             
             
-            // )
+             )
           }
          
 
@@ -62,4 +63,4 @@ const Tag = () => {
   )
 }
 
-export default Tag
+export default Tag;
