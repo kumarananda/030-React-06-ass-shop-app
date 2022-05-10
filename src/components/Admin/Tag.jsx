@@ -42,22 +42,24 @@ const Tag = () => {
     axios.get('http://localhost:5050/tags/' + id).then(res => {
       setTag({
         name : res.data.name,
-        id : res.data.id
+        id : res.data.id,
       });
+      
+
     }
 
     )
   }
 
 
-
+//  console.log(tag.id);
   // Edit Form Submit 
   const handleUdateForm = (e) => {
     e.preventDefault();
 
     let slug = makeSlug(tag.name);
 
-    axios.put('http://localhost:5050/tags/' + tag.id, {
+    axios.patch('http://localhost:5050/tags/' + tag.id, {
       name : tag.name,
       slug : slug
     }).then(
@@ -112,9 +114,9 @@ const Tag = () => {
         <>
           <h3>Edit tag data</h3>
           <hr />
-          <Form onSubmit={ handleUdateForm } >
+          <Form onSubmit={handleUdateForm } >
             <Form.Group className='my-3'>
-              <Form.Control value={tag.name} onChange={ e => setTag( e.target.value) }  type='text' placeholder='Tag Name'/>
+              <Form.Control value={tag.name} onChange={ e => setTag({...tag, name : e.target.value}) }  type='text' placeholder='Tag Name'/>
             </Form.Group>
             <br />
             <Form.Group className=' my-3'>
@@ -124,10 +126,6 @@ const Tag = () => {
         </>
       }
 
-      
-
-    
-    
     </>
   )
 }
