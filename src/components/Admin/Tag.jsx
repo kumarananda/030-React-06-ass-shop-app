@@ -1,20 +1,74 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Table, Button } from 'react-bootstrap'
+import { Table, Button, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const Tag = () => {
 
+  //slug Genarete
+  const makeSlug = (data) => {
+    let arr = data.split(' ');
+    return arr.join('-').toLowerCase();
+  }
+
+  // edit tag state
+  const [tag, setTag] = useState({
+    name : '',
+    id : ''
+  });
+
+  const [tagupdateform, setTagupdateform] = useState(false);
+
+  // tag state
   const [tags, setTags] = useState([]); 
 
 // console.log(tags);
   // get data 
   useEffect( () => {
-    console.log(tags);
+
     axios.get('http://localhost:5050/tags').then( res => {
       setTags( res.data);
     })
   },[tags]);
+
+  // tag delete 
+  const handlTagDelete = (id) => {
+    axios.delete('http://localhost:5050/tags/' + id)
+  }
+
+  //tag edit
+  const handlTagEdit = (id) => {
+    setTagupdateform(true)
+    axios.get('http://localhost:5050/tags/' + id).then(res => {
+      setTag({
+        name : res.data.name,
+        id : res.data.id
+      });
+    }
+
+    )
+  }
+
+
+
+  // Edit Form Submit 
+  const handleUdateForm = (e) => {
+    e.preventDefault();
+
+    let slug = makeSlug(tag.name);
+
+    axios.put('http://localhost:5050/tags/' + tag.id, {
+      name : tag.name,
+      slug : slug
+    }).then(
+      setTagupdateform(false)
+    ).catch(err => {
+      console.log(err);
+    }
+      
+    )
+
+  }
 
   
   return (
@@ -38,25 +92,40 @@ const Tag = () => {
             tags.map( (data, index) => 
             
             <tr>
-            <td>#</td>
-            <td>Men</td>
-            <td>men</td>
+            <td>{ index +1 }</td>
+            <td>{ data.name }</td>
+            <td>{ data.slug }</td>
             <td>
-              <Button variant='info' className='btn-sm '>View</Button>
-              <Button variant='' className='btn-warning btn-sm '>Edit</Button>
-              <Button variant='danger' className='btn-sm '>Delete</Button>
+              <Button onClick={ () => handlTagEdit(data.id)} variant='' className='btn-warning btn-sm '>Edit</Button>
+              <Button onClick={ () => handlTagDelete(data.id)} variant='danger' className='btn-sm '>Delete</Button>
             </td>
           </tr>
             
             
              )
           }
-         
-
-
         </tbody>
         <tbody></tbody>
       </Table>
+      {
+        tagupdateform && 
+        <>
+          <h3>Edit tag data</h3>
+          <hr />
+          <Form onSubmit={ handleUdateForm } >
+            <Form.Group className='my-3'>
+              <Form.Control value={tag.name} onChange={ e => setTag( e.target.value) }  type='text' placeholder='Tag Name'/>
+            </Form.Group>
+            <br />
+            <Form.Group className=' my-3'>
+              <Button  type='submit' variant='success' className='btn-sm' >Udate</Button>
+            </Form.Group>
+          </Form>
+        </>
+      }
+
+      
+
     
     
     </>

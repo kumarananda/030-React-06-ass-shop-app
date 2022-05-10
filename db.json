@@ -3,29 +3,19 @@
   "category": [],
   "tags": [
     {
-      "id": 1,
-      "name": "gsgsg dgd",
-      "slug": "gsgsg-dgd"
-    },
-    {
-      "id": 2,
       "name": "gfdgfdg",
-      "slug": "gfdgfdg"
+      "slug": "gfdgfdg",
+      "id": 2
     },
     {
-      "id": 3,
       "name": "my name is ANANda",
-      "slug": "my-name-is-ananda"
+      "slug": "my-name-is-ananda",
+      "id": 3
     },
     {
-      "id": 4,
       "name": "hjh",
-      "slug": "hjh"
-    },
-    {
-      "id": 5,
-      "name": "sgdgd",
-      "slug": "sgdgd"
+      "slug": "hjh",
+      "id": 4
     }
   ]
 }
