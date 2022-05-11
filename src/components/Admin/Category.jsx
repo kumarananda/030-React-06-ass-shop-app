@@ -110,22 +110,7 @@ const Category = () => {
   return (
     <>
       <h1>Category</h1>
-      <Button onClick={ handleAddform } className='btn btn-info btn-sm' >Add New tag</Button>
-      <hr />
-      {
-        categoryForm && 
-        <>
-          <Form onSubmit={handleCatAddSubmit} >
-            <Form.Group className='my-3'>
-              <Form.Control value={category.name}  onChange={ e => setCategory({ ...category, name : e.target.value})}  type='text' placeholder='Category Name'/>
-            </Form.Group>
-            <br />
-            <Form.Group className=' my-3'>
-              <Button  type='submit' variant='success' className='btn-sm' >Add</Button>
-            </Form.Group>
-          </Form>
-        </>
-      }
+      <Button onClick={ handleAddform } className='btn btn-info btn-sm' >Add New tag</Button>     
       <hr />
       <Table>
         <thead>
@@ -161,6 +146,20 @@ const Category = () => {
           tagEditform && 
           <>
             <Form onSubmit={ handleEditformSubmit } >
+              <Form.Group className='my-3'>
+                <Form.Control value={category.name}  onChange={ e => setCategory({ ...category, name : e.target.value})}  type='text' placeholder='Category Name'/>
+              </Form.Group>
+              <br />
+              <Form.Group className=' my-3'>
+                <Button  type='submit' variant='info' className='btn-sm' >Udate</Button>
+              </Form.Group>
+            </Form>
+          </>
+        }
+        {
+        categoryForm && 
+          <>
+            <Form onSubmit={handleCatAddSubmit} >
               <Form.Group className='my-3'>
                 <Form.Control value={category.name}  onChange={ e => setCategory({ ...category, name : e.target.value})}  type='text' placeholder='Category Name'/>
               </Form.Group>
