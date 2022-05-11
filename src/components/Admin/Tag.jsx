@@ -45,8 +45,8 @@ const Tag = () => {
         name : res.data.name,
         id : res.data.id,
       });
-      
 
+      
     }
 
     )
@@ -90,22 +90,21 @@ const Tag = () => {
         </thead>
         <tbody>
  
-
-          {
+          {            
             tags.map( (data, index) => 
             
             <tr>
-            <td>{ index +1 }</td>
-            <td>{ data.name }</td>
-            <td>{ data.slug }</td>
-            <td>
-              <Button onClick={ () => handlTagEdit(data.id)} variant='' className='btn-warning btn-sm '>Edit</Button>
-              <Button onClick={ () => handlTagDelete(data.id)} variant='danger' className='btn-sm '>Delete</Button>
-            </td>
-          </tr>
+              <td>{ index +1 }</td>
+              <td>{ data.name }</td>
+              <td>{ data.slug }</td>
+              <td>
+                <Button onClick={ () => handlTagEdit(data.id)} variant='' className='btn-warning btn-sm '>Edit</Button>
+                <Button onClick={ () => handlTagDelete(data.id)} variant='danger' className='btn-sm '>Delete</Button>
+              </td>
+            </tr>
             
             
-             )
+            )
           }
         </tbody>
         <tbody></tbody>

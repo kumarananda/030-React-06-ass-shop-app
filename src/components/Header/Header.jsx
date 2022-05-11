@@ -104,10 +104,10 @@ const Header = () => {
                     <Link to="/shop">Shop</Link>
                     </li>
                     <li className="has-submenu">
-                    <Link to="/contact">Pricing</Link>
+                    <Link to="/contact">Contact</Link>
                     </li>
                     <li className="has-submenu">
-                    <Link to="/contact">Contact</Link>
+                    <Link to="/admin">Admin</Link>
                     </li>
 
                 </ul>

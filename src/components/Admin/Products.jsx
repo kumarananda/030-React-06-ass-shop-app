@@ -1,13 +1,16 @@
 import React from 'react'
 import { Table, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Products = () => {
 
-  
+
 
   return (
     <>
       <h1>Products</h1>
+      <hr />
+      <Link className='btn btn-primary btn-sm' to={'/admin/add-products'}>Add Product</Link>
       <hr />
       <Table>
         <thead>
