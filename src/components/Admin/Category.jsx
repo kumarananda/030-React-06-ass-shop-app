@@ -142,7 +142,7 @@ const Category = () => {
           
         </tbody>
       </Table>
-        {
+        { 
           tagEditform && 
           <>
             <Form onSubmit={ handleEditformSubmit } >
