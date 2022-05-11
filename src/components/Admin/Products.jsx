@@ -2,6 +2,9 @@ import React from 'react'
 import { Table, Button } from 'react-bootstrap'
 
 const Products = () => {
+
+  
+
   return (
     <>
       <h1>Products</h1>
