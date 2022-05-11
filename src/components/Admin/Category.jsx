@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Table, Button, Form } from 'react-bootstrap'
 
 const Category = () => {
@@ -17,6 +17,7 @@ const Category = () => {
   // handle Add form
   const handleAddform = () => {
     setCategoryForm(true)
+    setTagEditform(false)
   }
 
   // input category data
@@ -25,6 +26,10 @@ const Category = () => {
     id : '',
     slug : ''
   });
+
+  // get category data
+  const [getCat, setGetCat] = useState([]);
+
 
   // Category  add handle
   const handleCatAddSubmit = (e) => {
@@ -51,19 +56,65 @@ const Category = () => {
 
   }  
 
+  // get category data
+  useEffect( () => {
+    axios.get('http://localhost:5050/category').then( res => {
+      setGetCat(res.data)
+    })
+  }, [ getCat ])
 
+  // delete category
+  const haldleCatDelete = (id) => {
+    axios.delete('http://localhost:5050/category/' + id )
+  }
+
+  // show/hide edit form
+  const [tagEditform, setTagEditform] = useState(false);
+
+  // category Edit
+  const haldleCatEditForm = (id) => {
+    setTagEditform(true)
+    setCategoryForm(false)
+
+    axios.get('http://localhost:5050/category/' + id).then( res => {
+      setCategory({
+        name : res.data.name,
+        id : res.data.id
+      })
+    }) 
+
+  }
+
+  //Edit form Submit
+  const handleEditformSubmit = (e) => {
+    e.preventDefault()
+
+    let slug = makeSlug(category.name)
+
+    axios.patch('http://localhost:5050/category/' + category.id, {
+      name : category.name,
+      slug : slug
+    }).then( res => {
+      setTagEditform(false)
+      setCategory({
+        name : '',
+        id : ''
+      })
+    }).catch( err => {
+      console.log(err);
+    })
+
+  }
 
 
   return (
     <>
       <h1>Category</h1>
-      
-      <Button onClick={handleAddform} className='btn btn-info btn-sm' >Add New tag</Button>
+      <Button onClick={ handleAddform } className='btn btn-info btn-sm' >Add New tag</Button>
       <hr />
       {
         categoryForm && 
         <>
-        
           <Form onSubmit={handleCatAddSubmit} >
             <Form.Group className='my-3'>
               <Form.Control value={category.name}  onChange={ e => setCategory({ ...category, name : e.target.value})}  type='text' placeholder='Category Name'/>
@@ -87,16 +138,40 @@ const Category = () => {
 
         </thead>
         <tbody>
-          <td>1</td>
-          <td>Men</td>
-          <td>men</td>
-          <td>
-            <Button variant='info' className='btn-sm '>View</Button>
-            <Button variant='warning' className='btn-sm '>Edit</Button>
-            <Button variant='danger' className='btn-sm '>Delete</Button>
-          </td>
+
+          {
+            getCat.map((data, index) => 
+              <>
+                <tr>
+                  <td>{ index + 1 }</td>
+                  <td>{ data.name}</td>
+                  <td>{ data.slug}</td>
+                  <td>
+                    <Button onClick={() => haldleCatEditForm(data.id)} variant='warning' className='btn-sm '>Edit</Button>
+                    <Button onClick={() => haldleCatDelete(data.id)} variant='danger' className='btn-sm '>Delete</Button>
+                  </td>
+                </tr>
+              </>
+            )
+          }
+          
         </tbody>
       </Table>
+        {
+          tagEditform && 
+          <>
+            <Form onSubmit={ handleEditformSubmit } >
+              <Form.Group className='my-3'>
+                <Form.Control value={category.name}  onChange={ e => setCategory({ ...category, name : e.target.value})}  type='text' placeholder='Category Name'/>
+              </Form.Group>
+              <br />
+              <Form.Group className=' my-3'>
+                <Button  type='submit' variant='success' className='btn-sm' >Add</Button>
+              </Form.Group>
+            </Form>
+          </>
+        }
+      
     
     
     </>

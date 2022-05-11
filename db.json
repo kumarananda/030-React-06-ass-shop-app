@@ -3,23 +3,18 @@
   "category": [
     {
       "id": 1,
-      "name": "mobile sumsung",
-      "slug": "mobile-sumsung"
+      "name": "mobile sumsung new",
+      "slug": "mobile-sumsung-new"
     },
     {
-      "id": 2,
-      "name": "mobile sumsung",
-      "slug": "mobile-sumsung"
+      "id": 5,
+      "name": "sfsfg",
+      "slug": "sfsfg"
     },
     {
-      "id": 3,
-      "name": "mobile sumsung",
-      "slug": "mobile-sumsung"
-    },
-    {
-      "id": 4,
-      "name": "",
-      "slug": ""
+      "id": 6,
+      "name": "mobile sumsung new",
+      "slug": "mobile-sumsung-new"
     }
   ],
   "tags": [
@@ -45,8 +40,8 @@
     },
     {
       "id": 6,
-      "name": "new tag",
-      "slug": "new-tag"
+      "name": "new tag add",
+      "slug": "new-tag-add"
     }
   ]
 }
