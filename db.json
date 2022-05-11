@@ -15,6 +15,11 @@
       "id": 6,
       "name": "mobile sumsung new",
       "slug": "mobile-sumsung-new"
+    },
+    {
+      "id": 7,
+      "name": "fish",
+      "slug": "fish"
     }
   ],
   "tags": [

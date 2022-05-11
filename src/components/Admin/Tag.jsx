@@ -1,9 +1,9 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import { Table, Button, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-const Tag = () => {
+const Tag = ({tags}) => {
 
   //slug Genarete
   const makeSlug = (data) => {
@@ -20,17 +20,6 @@ const Tag = () => {
   // show/hide edit form
   const [tagupdateform, setTagupdateform] = useState(false);
 
-  // tag state
-  const [tags, setTags] = useState([]); 
-
-// console.log(tags);
-  // get data 
-  useEffect( () => {
-
-    axios.get('http://localhost:5050/tags').then( res => {
-      setTags( res.data);
-    })
-  },[tags]);
 
   // tag delete 
   const handlTagDelete = (id) => {
@@ -45,11 +34,7 @@ const Tag = () => {
         name : res.data.name,
         id : res.data.id,
       });
-
-      
-    }
-
-    )
+    })
   }
 
 

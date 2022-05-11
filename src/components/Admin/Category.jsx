@@ -1,9 +1,9 @@
 
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import { Table, Button, Form } from 'react-bootstrap'
 
-const Category = () => {
+const Category = ({ getCat }) => {
 
     //slug Genarete
     const makeSlug = (data) => {
@@ -26,9 +26,6 @@ const Category = () => {
     id : '',
     slug : ''
   });
-
-  // get category data
-  const [getCat, setGetCat] = useState([]);
 
 
   // Category  add handle
@@ -56,12 +53,7 @@ const Category = () => {
 
   }  
 
-  // get category data
-  useEffect( () => {
-    axios.get('http://localhost:5050/category').then( res => {
-      setGetCat(res.data)
-    })
-  }, [ getCat ])
+
 
   // delete category
   const haldleCatDelete = (id) => {

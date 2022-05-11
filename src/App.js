@@ -16,10 +16,40 @@ import Tag from './components/Admin/Tag';
 import Dash from './components/Admin/Dash';
 import AddTag from './components/Admin/AddTag';
 import ProductAdd from './components/Admin/ProductAdd';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 
 
 function App() {
+
+    // tag state
+    const [tags, setTags] = useState([]); 
+    // get category data
+    const [getCat, setGetCat] = useState([]);
+
+    // console.log(tags);
+      // get data 
+      useEffect( () => {
+    
+        axios.get('http://localhost:5050/tags').then( res => {
+          setTags( res.data);
+        })
+      },[tags]);
+
+      // get data 
+      useEffect( () => {
+        // Set category data
+        axios.get('http://localhost:5050/category').then( res => {
+        setGetCat(res.data)
+        })
+      },[getCat]);
+
+
+  
+
+
+
   return (
     <>
     
@@ -33,10 +63,10 @@ function App() {
             <Route path='/admin' element={<Dashbord/>} >
               <Route path='/admin' element={ <Dash/>} />
               <Route path='/admin/products' element={ <Products/>} />
-              <Route path='/admin/add-products' element={ <ProductAdd/>} />
-              <Route path='/admin/category' element={ <Category/>} />
-              <Route path='/admin/tag' element={ <Tag/>} />
-              <Route path='/admin/add-tag' element={ <AddTag/>} />
+              <Route path='/admin/add-products' element={ <ProductAdd tags={ tags } getCat={ getCat } />} />
+              <Route path='/admin/category' element={ <Category getCat={ getCat } />} />
+              <Route path='/admin/tag' element={ <Tag tags={ tags } />} />
+              <Route path='/admin/add-tag' element={ <AddTag />} />
             </Route>
            
           </Routes>
