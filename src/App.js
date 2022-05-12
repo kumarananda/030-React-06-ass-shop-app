@@ -35,7 +35,7 @@ function App() {
         axios.get('http://localhost:5050/tags').then( res => {
           setTags( res.data);
         })
-      },[tags]);
+      },[]);
 
       // get data 
       useEffect( () => {
@@ -43,7 +43,7 @@ function App() {
         axios.get('http://localhost:5050/category').then( res => {
         setGetCat(res.data)
         })
-      },[getCat]);
+      },[]);
 
 
   
