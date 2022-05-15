@@ -1,17 +1,17 @@
 
-import axios from 'axios';
-import React, {  useState } from 'react'
-import { Table, Button, Form } from 'react-bootstrap'
-import { Link } from 'react-router-dom';
+import Axios from 'axios';
+import React, {  useEffect, useState } from 'react'
+import { Button, Form } from 'react-bootstrap'
+import { Link, useParams } from 'react-router-dom';
 
-const ProductAdd = ( { tags, getCat, makeSlug } ) => {
+const ProductEdit = ( { tags, getCat, makeSlug } ) => {
 
 
   // form data manage
   const [inputs, setInputs] = useState({
     id : '',
     name : '',
-    slug : '',
+    // slug : '',
     reg_price : '',
     sale_peice : '',
     desc : '',
@@ -21,14 +21,36 @@ const ProductAdd = ( { tags, getCat, makeSlug } ) => {
     photo : ''
   })
 
+  // params
+  const parms = useParams()
+  let { id } = parms;
+
   // console.log(inputs);
 
+  // get single product data 
+  useEffect( () => {
+
+    Axios.get('http://localhost:5050/products/'+ id ).then( res => {
+
+      setInputs({
+        name : res.data.name,
+        reg_price : res.data. reg_price,
+        sale_peice : res.data.sale_peice,
+        desc : res.data.desc,
+        rating : res.data.rating,
+        categoryId : res.data.categoryId,
+        tagsId : res.data.tagsId,
+        photo : res.data.photo
+      })
+    })
+  },[])
+
   // hadle form submit
-  const handleProductAdd = (e) => {
+  const handleProductEdit = (e) => {
     e.preventDefault()
     
     const slug = makeSlug(inputs.name)
-    axios.post('http://localhost:5050/products', {
+    Axios.patch('http://localhost:5050/products/'+ id   ,{
       id : '',
       name : inputs.name,
       slug : slug,
@@ -62,11 +84,11 @@ const ProductAdd = ( { tags, getCat, makeSlug } ) => {
 
   return (
     <>
-      <h1>Add New Product</h1>
+      <h1>Edit Product</h1>
       <hr />
       <Link to='/admin/products' className='btn btn-info btn-sm' >All Product</Link>     
       <hr />
-      <Form onSubmit={ handleProductAdd}>
+      <Form onSubmit={ handleProductEdit}>
         <Form.Group >
           <Form.Label>Product Name</Form.Label>
           <Form.Control  type='text' value={ inputs.name} onChange={ e => setInputs({ ...inputs, name : e.target.value})} />
@@ -122,7 +144,7 @@ const ProductAdd = ( { tags, getCat, makeSlug } ) => {
         </Form.Group>
         <br/>
         <Form.Group >
-          <Button type='submit' className='btn-sm' variant='primary' >Add Now</Button>
+          <Button type='submit' className='btn-sm' variant='primary' >Edit</Button>
         </Form.Group>
       </Form>
 
@@ -130,4 +152,4 @@ const ProductAdd = ( { tags, getCat, makeSlug } ) => {
   )
 }
 
-export default ProductAdd;
+export default ProductEdit;

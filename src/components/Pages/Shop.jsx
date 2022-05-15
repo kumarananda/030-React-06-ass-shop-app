@@ -1,9 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import product from '../../_assets/images/shop/4.jpg'
+import { Link, useParams } from 'react-router-dom'
+import produ from '../../_assets/images/shop/4.jpg'
 import Sidebar from '../Partials/Sidebar'
 
-const Shop = () => {
+const Shop = ( {product} ) => {
+
+  // get params
+  const prams = useParams();
+  let { slug } = prams;
+
+
   return (
     <>
             <section>
@@ -20,155 +26,37 @@ const Shop = () => {
             <div className="container-fluid">
               <div className="row">
 
-               
+                {
+                  product.map((data) => 
+                    <>
+                      <div className="col-md-4 col-sm-6">
+                        <div className="shop-product">
+                          <div className="product-thumb">
+                            <Link to={`/shop/${data.slug}`}>
+                              <img style={ {hight : "250px", width : "100%", objectFit : 'cover'  }} src={ data.photo } alt=""/>
+                            </Link>
+                            <div className="product-overlay"><a href="#" className="btn btn-color-out btn-sm">Add To Cart<i className="ti-bag"></i></a>
+                            </div>
+                          </div>
+                          <div className="product-info">
 
-                <div className="col-md-4 col-sm-6">
-                  <div className="shop-product">
-                    <div className="product-thumb">
-                      <Link to="/shop/alo">
-                        <img src={ product } alt=""/>
-                      </Link>
-                      <div className="product-overlay"><a href="#" className="btn btn-color-out btn-sm">Add To Cart<i className="ti-bag"></i></a>
-                      </div>
-                    </div>
-                    <div className="product-info">
-                      <h4 className="upper"><a href="#">Premium Notch Blazer</a></h4><span>$79.99</span>
-                      <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="col-md-4 col-sm-6">
-                  <div className="shop-product">
-                    <div className="product-thumb">
-                      <a href="#">
-                        <img src={ product } alt=""/>
-                      </a>
-                      <div className="product-overlay"><a href="#" className="btn btn-color-out btn-sm">Add To Cart<i className="ti-bag"></i></a>
-                      </div>
-                    </div>
-                    <div className="product-info">
-                      <h4 className="upper"><a href="#">Premium Notch Blazer</a></h4><span>$79.99</span>
-                      <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-md-4 col-sm-6">
-                  <div className="shop-product">
-                    <div className="product-thumb">
-                      <a href="#">
-                        <img src={ product } alt=""/>
-                      </a>
-                      <div className="product-overlay"><a href="#" className="btn btn-color-out btn-sm">Add To Cart<i className="ti-bag"></i></a>
-                      </div>
-                    </div>
-                    <div className="product-info">
-                      <h4 className="upper"><a href="#">Premium Notch Blazer</a></h4><span>$79.99</span>
-                      <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4 col-sm-6">
-                  <div className="shop-product">
-                    <div className="product-thumb">
-                      <a href="#">
-                        <img src={ product } alt=""/>
-                      </a>
-                      <div className="product-overlay"><a href="#" className="btn btn-color-out btn-sm">Add To Cart<i className="ti-bag"></i></a>
-                      </div>
-                    </div>
-                    <div className="product-info">
-                      <h4 className="upper"><a href="#">Premium Notch Blazer</a></h4><span>$79.99</span>
-                      <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4 col-sm-6">
-                  <div className="shop-product">
-                    <div className="product-thumb">
-                      <a href="#">
-                        <img src={ product } alt=""/>
-                      </a>
-                      <div className="product-overlay"><a href="#" className="btn btn-color-out btn-sm">Add To Cart<i className="ti-bag"></i></a>
-                      </div>
-                    </div>
-                    <div className="product-info">
-                      <h4 className="upper"><a href="#">Premium Notch Blazer</a></h4><span>$79.99</span>
-                      <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4 col-sm-6">
-                  <div className="shop-product">
-                    <div className="product-thumb">
-                      <a href="#">
-                        <img src={ product } alt=""/>
-                      </a>
-                      <div className="product-overlay"><a href="#" className="btn btn-color-out btn-sm">Add To Cart<i className="ti-bag"></i></a>
-                      </div>
-                    </div>
-                    <div className="product-info">
-                      <h4 className="upper"><a href="#">Premium Notch Blazer</a></h4><span>$79.99</span>
-                      <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4 col-sm-6">
-                  <div className="shop-product">
-                    <div className="product-thumb">
-                      <a href="#">
-                        <img src={ product } alt=""/>
-                      </a>
-                      <div className="product-overlay"><a href="#" className="btn btn-color-out btn-sm">Add To Cart<i className="ti-bag"></i></a>
-                      </div>
-                    </div>
-                    <div className="product-info">
-                      <h4 className="upper"><a href="#">Premium Notch Blazer</a></h4><span>$79.99</span>
-                      <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4 col-sm-6">
-                  <div className="shop-product">
-                    <div className="product-thumb">
-                      <a href="#">
-                        <img src={ product } alt=""/>
-                      </a>
-                      <div className="product-overlay"><a href="#" className="btn btn-color-out btn-sm">Add To Cart<i className="ti-bag"></i></a>
-                      </div>
-                    </div>
-                    <div className="product-info">
-                      <h4 className="upper"><a href="#">Premium Notch Blazer</a></h4><span>$79.99</span>
-                      <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4 col-sm-6">
-                  <div className="shop-product">
-                    <div className="product-thumb">
-                      <a href="#">
-                        <img src={ product } alt=""/>
-                      </a>
-                      <div className="product-overlay"><a href="#" className="btn btn-color-out btn-sm">Add To Cart<i className="ti-bag"></i></a>
-                      </div>
-                    </div>
-                    <div className="product-info">
-                      <h4 className="upper"><a href="#">Premium Notch Blazer</a></h4><span>$79.99</span>
-                      <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
+                            <h4 className="upper"><a href="#">{ data.name }</a></h4>
+                            {
+                              data.sale_peice ?
+                              <>
+                                <span style={{textDecoration : 'line-through', display : 'inline-block', marginRight : '10px'}}>${data.reg_price }</span>
+                                <span style={ {color: 'red'}}>${data.sale_peice }</span>
+                              </> 
+                              : <span >${data.reg_price }</span>
+                            }
+                            <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>                  
+                    </>
+                  )
+                }
 
               </div>
               {/* <!-- end of row--> */}

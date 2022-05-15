@@ -1,16 +1,42 @@
-import React from 'react';
-import img1 from '../../_assets/images/shop/single-1.jpg';
-import img2 from '../../_assets/images/shop/single-2.jpg';
-import img3 from '../../_assets/images/shop/single-3.jpg';
-import img4 from '../../_assets/images/shop/single-4.jpg';
-
-import product1 from '../../_assets/images/shop/1.jpg';
-import product2 from '../../_assets/images/shop/2.jpg';
-import product3 from '../../_assets/images/shop/3.jpg';
-import product4 from '../../_assets/images/shop/4.jpg';
+import React, { useEffect, useState } from 'react';
 
 
-const ProductSingle = () => {
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import Rating from './Rating';
+
+
+const ProductSingle = ( {makeSlug}) => {
+
+    const {slug} = useParams()
+
+    const [ product, setProduct] = useState({
+        id : '',
+        name : '',
+        reg_price : '',
+        sale_peice : '',
+        desc : '',
+        rating : '',
+        categoryId : '',
+        tagsId : '',
+        photo : ''
+    })
+
+
+
+    useEffect( () => {
+
+        const updateSlug = makeSlug(product.name)
+        axios.get(`http://localhost:5050/products?slug=${ slug }`).then( res => {
+            setProduct( res.data[0])
+        })
+
+        
+    },[])
+    
+    
+
+
   return (
     <>
         <section>
@@ -20,7 +46,7 @@ const ProductSingle = () => {
                     <div className="col-md-6">
                     <div data-options="{&quot;animation&quot;: &quot;slide&quot;, &quot;controlNav&quot;: true}" className="flexslider nav-inside control-nav-dark">
                         <ul className="slides">
-                            <img src={ img1 } alt=""/>
+                            <img src={ product.photo } alt=""/>
                             {/* <li>
                                 <img src={ img1 } alt=""/>
                             </li>
@@ -38,20 +64,35 @@ const ProductSingle = () => {
                     </div>
                     <div className="col-md-5 col-md-offset-1">
                     <div className="title mt-0">
-                        <h2>Notch Blazer in Longline<span className="red-dot"></span></h2>
+                        <h2>{ product.name }<span className="red-dot"></span></h2>
                         <p className="m-0">Free Shipping Worldwide</p>
                     </div>
                     <div className="single-product-price">
                         <div className="row">
                         <div className="col-xs-6">
-                            <h3><del>$29.99</del><span>$24.99</span></h3>
+                            <h3>
+                                {
+                                  product.sale_peice ?  
+                                  <>
+                                    <del style={{textDecoration : 'line-through', display : 'inline-block', marginRight : '10px'}}>{product.reg_price } TK</del>
+                                    <span>{ product.sale_peice } TK</span>
+                                  </>
+                                  : <span>{ product.reg_price } TK</span>
+                                }
+                            </h3>  
+
                         </div>
-                        <div className="col-xs-6 text-right"><span className="rating-stars">              <i className="ti-star full"></i><i className="ti-star full"></i><i className="ti-star full"></i><i className="ti-star full"></i><i className="ti-star"></i><span className="hidden-xs">(3 Reviews)</span></span>
+                        <div className="col-xs-6 text-right"><span className="rating-stars">
+                            <Rating rate={product.rating} />
+                            
+
+
+                            <span className="hidden-xs">(3 Reviews)</span></span>
                         </div>
                         </div>
                     </div>
                     <div className="single-product-desc">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis repellat iste natus at impedit quo consequuntur, quam, vel saepe voluptatum minus temporibus excepturi aspernatur labore molestiae fugit tempora veritatis unde.</p>
+                        <p>Description : {product.desc} </p>
                     </div>
                     <div className="single-product-add">
                         <form action="#" className="inline-form">
@@ -177,62 +218,25 @@ const ProductSingle = () => {
                 <div className="related-products">
                 <h5 className="upper">Related Products</h5>
                 <div className="row">
+                    {
+                        
+                    }
+
                     <div className="col-md-3 col-sm-6">
-                    <div className="shop-product">
-                        <div className="product-thumb">
-                        <a href="#">
-                            <img src={ product1 } alt=""/>
-                        </a>
-                        </div>
-                        <div className="product-info">
-                        <h4 className="upper"><a href="#">Premium Notch Blazer</a></h4><span>$79.99</span>
-                        <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="col-md-3 col-sm-6">
-                    <div className="shop-product">
-                        <div className="product-thumb">
-                        <a href="#">
-                            <img src={ product2 } alt=""/>
-                        </a>
-                        </div>
-                        <div className="product-info">
-                        <h4 className="upper"><a href="#">Premium Suit Blazer</a></h4><span>$199.99</span>
-                        <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
-                        </div>
+                        <div className="shop-product">
+                            <div className="product-thumb">
+                            <a href="#">
+                                <img src={ product2 } alt=""/>
+                            </a>
+                            </div>
+                            <div className="product-info">
+                            <h4 className="upper"><a href="#">Premium Suit Blazer</a></h4><span>$199.99</span>
+                            <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
+                            </div>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                    <div className="col-md-3 col-sm-6">
-                    <div className="shop-product">
-                        <div className="product-thumb">
-                        <a href="#">
-                            <img src={ product3 } alt=""/>
-                        </a>
-                        </div>
-                        <div className="product-info">
-                        <h4 className="upper"><a href="#">Vintage Sweatshirt</a></h4><span>$99.99</span>
-                        <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="col-md-3 col-sm-6">
-                    <div className="shop-product">
-                        <div className="product-thumb">
-                        <a href="#">
-                            <img src={product4 } alt=""/>
-                        </a>
-                        </div>
-                        <div className="product-info">
-                        <h4 className="upper"><a href="#">Longline Jersey Jacket</a></h4><span>$19.99</span>
-                        <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
+
                 </div>
                 </div>
             </div>

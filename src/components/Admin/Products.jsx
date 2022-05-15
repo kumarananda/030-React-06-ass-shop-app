@@ -2,11 +2,13 @@ import React from 'react'
 import { Table, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-const Products = () => {
+const Products = ( {product} ) => {
 
+  // console.log(product);
 
 
   return (
+    
     <>
       <h1>Products</h1>
       <hr />
@@ -17,20 +19,31 @@ const Products = () => {
           <tr>
             <td>#</td>
             <td>Name</td>
-            <td>Slug</td>
+
             <td>Action</td>
           </tr>
 
         </thead>
         <tbody>
-          <td>1</td>
-          <td>Men</td>
-          <td>men</td>
-          <td>
-            <Button variant='info' className='btn-sm '>View</Button>
-            <Button variant='warning' className='btn-sm '>Edit</Button>
-            <Button variant='danger' className='btn-sm '>Delete</Button>
-          </td>
+          {
+            product.map((data, index) => 
+            <>
+              <tr>
+                <td>{ index + 1 }</td>
+                <td>{ data.name}</td>
+
+                <td>
+                  <Button variant='info' className='btn-sm '>View</Button>
+                  <Link to={`/admin/edit-products/${data.id}`}   className='btn-sm btn-warning btn '>Edit</Link>
+                  <Button variant='danger' className='btn-sm '>Delete</Button>
+                </td>
+              </tr>
+            </>
+
+            )
+          }
+
+          
         </tbody>
       </Table>
     
@@ -39,4 +52,4 @@ const Products = () => {
   )
 }
 
-export default Products
+export default Products;

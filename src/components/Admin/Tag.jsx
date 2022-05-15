@@ -3,13 +3,8 @@ import React, {  useState } from 'react'
 import { Table, Button, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-const Tag = ({tags}) => {
+const Tag = ({tags, makeSlug }) => {
 
-  //slug Genarete
-  const makeSlug = (data) => {
-    let arr = data.split(' ');
-    return arr.join('-').toLowerCase();
-  }
 
   // edit tag state
   const [tag, setTag] = useState({
@@ -99,7 +94,7 @@ const Tag = ({tags}) => {
         <>
           <h3>Edit tag data</h3>
           <hr />
-          <Form onSubmit={handleUdateForm } >
+          <Form onSubmit={ handleUdateForm } >
             <Form.Group className='my-3'>
               <Form.Control value={tag.name} onChange={ e => setTag({...tag, name : e.target.value}) }  type='text' placeholder='Tag Name'/>
             </Form.Group>

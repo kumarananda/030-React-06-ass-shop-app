@@ -2,7 +2,13 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <>
+      <i className="ti-star full"></i>
+        <i className="ti-star full"></i>
+        <i className="ti-star full"></i>
+        <i className="ti-star full"></i>
+        <i className="ti-star"></i>
+    </>
   )
 }
 

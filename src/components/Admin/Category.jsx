@@ -3,13 +3,9 @@ import axios from 'axios';
 import React, {  useState } from 'react'
 import { Table, Button, Form } from 'react-bootstrap'
 
-const Category = ({ getCat }) => {
+const Category = ({ getCat, makeSlug }) => {
 
-    //slug Genarete
-    const makeSlug = (data) => {
-      let arr = data.split(' ');
-      return arr.join('-').toLowerCase();
-    }
+
 
   // category Form state
   const [categoryForm, setCategoryForm ] = useState(false);

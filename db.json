@@ -1,47 +1,160 @@
 {
-  "product": [],
-  "category": [
+  "products": [
     {
-      "id": 1,
-      "name": "mobile",
-      "slug": "mobile"
+      "id": 2,
+      "name": "Cotton Black Polo",
+      "reg_price": "500",
+      "sale_peice": "400",
+      "desc": "This Polo T-Shirt for Men's comfortable and can be worn for regular use. It is a perfect wear for men like you. ",
+      "rating": 4,
+      "photo": "https://static-01.daraz.com.bd/p/5facabc923522a8b9fd8860df795c534.jpg",
+      "slug": "cotton-black-polo",
+      "categoryId": 3,
+      "tagId": 1
+    },
+    {
+      "id": 3,
+      "name": "Bag Small Backpack For Men",
+      "reg_price": "200",
+      "sale_peice": "150",
+      "desc": "Use For: Daily Use, Outdoor, Shopping, Traveling, School and Collage",
+      "rating": 5,
+      "photo": "https://static-01.daraz.com.bd/p/fe9d9caede93664035b5224272630aca.jpg",
+      "slug": "bag-small-backpack-for-men",
+      "categoryId": 4,
+      "tagId": 2
+    },
+    {
+      "id": 4,
+      "name": "Jeep Long High quality High Capacity Artificial Leather Wallet For Men",
+      "reg_price": "600",
+      "sale_peice": "",
+      "desc": "Product details of Jeep Long High quality High Capacity Artificial Leather Wallet For Men",
+      "rating": 4,
+      "photo": "https://static-01.daraz.com.bd/p/394719d6904b3783f2977b224c2835d1.jpg",
+      "slug": "jeep-long-high-quality-high-capacity-artificial-leather-wallet-for-men",
+      "categoryId": 5,
+      "tagId": 3
     },
     {
       "id": 5,
-      "name": "tv",
-      "slug": "tv"
+      "name": "Satkahon Saree for Women",
+      "reg_price": "2000",
+      "sale_peice": "1200",
+      "desc": "Product details of Satkahon Saree for Women",
+      "rating": 5,
+      "photo": "https://static-01.daraz.com.bd/p/b4a4b266999961b5726344374afa541c.jpg",
+      "slug": "satkahon-saree-for-women",
+      "categoryId": 6,
+      "tagId": 4
     },
     {
       "id": 6,
-      "name": "mobile sumsung new",
-      "slug": "mobile-sumsung-new"
+      "name": "Remote Control High speed Racing Sports Car for kids",
+      "reg_price": "600",
+      "sale_peice": "400",
+      "desc": "This product comes with very attractive design. The material used in it will meet your expectation and need also. Now with a new look it is even better than before and its quality will definitely meet your desire. So you may take this to bring smile and enjoy the feel of good quality product.",
+      "rating": 4,
+      "photo": "https://static-01.daraz.com.bd/p/4af74aea77eb2640cfd35f1f78d86362.jpg",
+      "slug": "remote-control-high-speed-racing-sports-car-for-kids",
+      "categoryId": 7,
+      "tagId": 5
     },
     {
       "id": 7,
-      "name": "fish",
-      "slug": "fish"
+      "name": "09 FUTURE CAR TOY FOR CUTE BABY 09 FUTURE CAR TOY FOR CUTE BABY",
+      "reg_price": "1000",
+      "sale_peice": "900",
+      "desc": "Toy is an item that is used primarily by children though may also be marketed to adults under certain circumstances.",
+      "rating": 4,
+      "photo": "https://static-01.daraz.com.bd/p/735b20ea7cf0c88a1c298cb078f7d33c.jpg",
+      "slug": "09-future-car-toy-for-cute-baby-09-future-car-toy-for-cute-baby",
+      "categoryId": 7,
+      "tagId": 5
+    },
+    {
+      "id": 8,
+      "name": "FUTURE CAR TOY FOR CUTE BABY",
+      "reg_price": "500",
+      "sale_peice": "400",
+      "desc": "Toy is an item that is used primarily by children though may also be marketed to adults under certain circumstances.",
+      "rating": 4,
+      "photo": "https://static-01.daraz.com.bd/p/735b20ea7cf0c88a1c298cb078f7d33c.jpg",
+      "slug": "future-car-toy-for-cute-baby"
+    }
+  ],
+  "category": [
+    {
+      "id": 2,
+      "name": "monitor",
+      "slug": "monitor"
+    },
+    {
+      "id": 1,
+      "name": "fan",
+      "slug": "fan"
+    },
+    {
+      "id": 3,
+      "name": "Polo T-shirt",
+      "slug": "polo-t-shirt"
+    },
+    {
+      "id": 4,
+      "name": "Bag",
+      "slug": "bag"
+    },
+    {
+      "id": 5,
+      "name": "Wallet",
+      "slug": "wallet"
+    },
+    {
+      "id": 6,
+      "name": "Saree",
+      "slug": "saree"
+    },
+    {
+      "id": 7,
+      "name": "Toys & Games",
+      "slug": "toys-&-games"
+    },
+    {
+      "id": 8,
+      "name": "mobile sumsung",
+      "slug": "mobile-sumsung"
     }
   ],
   "tags": [
     {
-      "name": "gfdgfdg",
-      "slug": "gfdgfdg",
-      "id": 2
+      "id": 1,
+      "name": "Polo T-shirt",
+      "slug": "polo-t-shirt"
     },
     {
-      "name": "my name is ANANda",
-      "slug": "my-name-is-ananda",
-      "id": 3
+      "id": 2,
+      "name": "Men Bag",
+      "slug": "men-bag"
     },
     {
-      "name": "hjh new",
-      "slug": "hjh-new",
-      "id": 4
+      "id": 3,
+      "name": "Wallet men",
+      "slug": "wallet-men"
+    },
+    {
+      "id": 4,
+      "name": "Saree",
+      "slug": "saree"
     },
     {
       "id": 5,
-      "name": "ananda kumar saha",
-      "slug": "ananda-kumar-saha"
+      "name": "Car for kids",
+      "slug": "car-for-kids"
+    },
+    {
+      "id": 6,
+      "name": "kids item",
+      "slug": "kids-item"
     }
   ]
 }
