@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
-import produ from '../../_assets/images/shop/4.jpg'
 import Sidebar from '../Partials/Sidebar'
 
-const Shop = ( {product} ) => {
+const Shop = ( {product, setProduct, getCat} ) => {
 
   // get params
   const prams = useParams();
@@ -17,7 +16,7 @@ const Shop = ( {product} ) => {
         <div className="row">
           <div className="col-md-3 hidden-sm hidden-xs">
             
-              <Sidebar></Sidebar>
+              <Sidebar product={product} setProduct={setProduct} getCat={ getCat } ></Sidebar>
             
             
           </div>

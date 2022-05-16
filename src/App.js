@@ -43,7 +43,7 @@ function App() {
         axios.get('http://localhost:5050/tags').then( res => {
           setTags( res.data);
         })
-      },[tags]);
+      },[]);
 
       // get category data 
       useEffect( () => {
@@ -51,7 +51,7 @@ function App() {
         axios.get('http://localhost:5050/category').then( res => {
         setGetCat(res.data)
         })
-      },[getCat]);
+      },[]);
 
       // get category data 
       useEffect( () => {
@@ -59,7 +59,7 @@ function App() {
         axios.get('http://localhost:5050/products').then( res => {
           setProduct(res.data)
         })
-      },[product]);
+      },[]);
 
     
 
@@ -74,7 +74,7 @@ function App() {
         <Header/>
           <Routes>
             <Route path='/'element={ <Home/>} />
-            <Route path='/shop'element={ <Shop product={product }/>} />
+            <Route path='/shop'element={ <Shop product={product } setProduct={setProduct} getCat={ getCat } />} />
             <Route path='/shop/:slug'element={ <ProductSingle makeSlug={ makeSlug } />} />
             <Route path='/contact'element={ <Contact/>} />
 
