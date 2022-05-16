@@ -80,7 +80,57 @@
       "desc": "Toy is an item that is used primarily by children though may also be marketed to adults under certain circumstances.",
       "rating": 4,
       "photo": "https://static-01.daraz.com.bd/p/735b20ea7cf0c88a1c298cb078f7d33c.jpg",
-      "slug": "future-car-toy-for-cute-baby"
+      "slug": "future-car-toy-for-cute-baby",
+      "categoryId": 7,
+      "tagsId": 5
+    },
+    {
+      "id": 9,
+      "name": "LEOTUDE Regular Fit Half Sleeve Men's T-Shirt",
+      "slug": "leotude-regular-fit-half-sleeve-men's-t-shirt",
+      "reg_price": "1200",
+      "sale_peice": "800",
+      "desc": "LEOTUDE Regular Fit Half Sleeve Men's T-Shirt",
+      "rating": 5,
+      "categoryId": 3,
+      "tagsId": 1,
+      "photo": "https://m.media-amazon.com/images/I/81DKTXzkwnL._UY741_.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Matein Travel Laptop Backpack",
+      "slug": "matein-travel-laptop-backpack",
+      "reg_price": "1500",
+      "sale_peice": "1000",
+      "desc": "Matein Travel Laptop Backpack, Business Anti Theft Slim Durable Laptops Backpack with USB Charging Port, Water Resistant College School Computer Bag Gifts for Men & Women Fits 15.6 Inch Notebook, Grey",
+      "rating": 4,
+      "categoryId": 4,
+      "tagsId": 2,
+      "photo": "https://m.media-amazon.com/images/I/81p91cnIFEL._AC_SL1500_.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Genuine & Authentic Leather Fashionable Money bag or Wallet",
+      "slug": "genuine-&-authentic-leather-fashionable-money-bag-or-wallet",
+      "reg_price": "1000",
+      "sale_peice": "800",
+      "desc": "Genuine & Authentic Leather Fashionable Money bag or WalletGenuine & Authentic Leather Fashionable Money bag or Wallet",
+      "rating": 3,
+      "categoryId": 5,
+      "tagsId": 3,
+      "photo": "https://shabableather.com/wp-content/uploads/2021/01/03-7.jpg"
+    },
+    {
+      "id": 12,
+      "name": "100% Cotton T-Shirts For Men Best Price In Bangladesh",
+      "slug": "100%-cotton-t-shirts-for-men-best-price-in-bangladesh",
+      "reg_price": "500",
+      "sale_peice": "400",
+      "desc": "100% Cotton T-Shirts For Men Best Price In Bangladesh\n100% Cotton T-Shirts For Men Best Price In Bangladesh\n",
+      "rating": 3,
+      "categoryId": 3,
+      "tagsId": 1,
+      "photo": "https://www.shodagor.com/wp-content/uploads/2020/02/1-600-5.jpg"
     }
   ],
   "category": [

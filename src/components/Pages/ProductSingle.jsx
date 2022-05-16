@@ -8,7 +8,9 @@ import Rating from './Rating';
 
 const ProductSingle = ( {makeSlug}) => {
 
-    const {slug} = useParams()
+    const {slug} = useParams();
+
+    const [ related, setRelated ] = useState([])
 
     const [ product, setProduct] = useState({
         id : '',
@@ -22,8 +24,7 @@ const ProductSingle = ( {makeSlug}) => {
         photo : ''
     })
 
-
-
+    // get single product with slug
     useEffect( () => {
 
         const updateSlug = makeSlug(product.name)
@@ -33,6 +34,16 @@ const ProductSingle = ( {makeSlug}) => {
 
         
     },[])
+    
+    // get single product with slug
+    useEffect( () => {
+
+        axios.get(`http://localhost:5050/category/${ product.categoryId}/products`).then( res => {
+            // console.log( res.data)
+            setRelated( res.data)
+        })
+
+    })
     
     
 
@@ -219,23 +230,36 @@ const ProductSingle = ( {makeSlug}) => {
                 <h5 className="upper">Related Products</h5>
                 <div className="row">
                     {
-                        
+                        related.map( (data) => 
+                            data.slug !== slug ? 
+                            <>
+                                <div className="col-md-3 col-sm-6">
+                                    <div className="shop-product">
+                                        <div className="product-thumb">
+                                        <a href="#">
+                                            <img src={data.photo} alt=""/>
+                                        </a>
+                                        </div>
+                                        <div className="product-info">
+                                        <h4 className="upper"><a href="#"> { data.name } </a></h4>
+                                        {
+                                            data.sale_peice ?
+                                            <>
+                                                <span style={{textDecoration : 'line-through', display : 'inline-block', marginRight : '10px'}}>${data.reg_price }</span>
+                                                <span style={ {color: 'red'}}>${data.sale_peice }</span>
+                                            </> 
+                                            : <span >${data.reg_price }</span>
+                                        }
+                                        <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </> : ''
+                        )
                     }
 
-                    <div className="col-md-3 col-sm-6">
-                        <div className="shop-product">
-                            <div className="product-thumb">
-                            <a href="#">
-                                <img src={ product2 } alt=""/>
-                            </a>
-                            </div>
-                            <div className="product-info">
-                            <h4 className="upper"><a href="#">Premium Suit Blazer</a></h4><span>$199.99</span>
-                            <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
+
 
                 </div>
                 </div>

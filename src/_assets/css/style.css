@@ -4890,3 +4890,8 @@ footer.dark p {
     transform: scale(1);
   }
 }
+
+.shop-product .product-thumb a img {
+  max-height: 400px;
+
+}
