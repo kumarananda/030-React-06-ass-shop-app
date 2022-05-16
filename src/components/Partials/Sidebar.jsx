@@ -6,6 +6,19 @@ const Sidebar = () => {
     <>
         <div className="sidebar">
               <div className="widget">
+                <h6 className="upper">Search Shop</h6>
+                <form>
+                  <input type="text" placeholder="Search.." className="form-control"/>
+                </form>
+              </div>
+              {/* <!-- end of widget        --> */}
+              <div className="widget">
+                <h6 className="upper">Popular Tags</h6>
+                <div className="tags clearfix"><a href="#">Hipster</a><a href="#">Fashion</a><a href="#">Shirt</a><a href="#">Modern</a><a href="#">Vintage</a>
+                </div>
+              </div>
+              {/* <!-- end of widget      --> */}
+              <div className="widget">
                 <h6 className="upper">Categories</h6>
                 <ul className="nav">
                   <li><a href="#">Beauty</a>
@@ -51,19 +64,7 @@ const Sidebar = () => {
                 </ul>
               </div>
               {/* <!-- end of widget          --> */}
-              <div className="widget">
-                <h6 className="upper">Search Shop</h6>
-                <form>
-                  <input type="text" placeholder="Search.." className="form-control"/>
-                </form>
-              </div>
-              {/* <!-- end of widget        --> */}
-              <div className="widget">
-                <h6 className="upper">Popular Tags</h6>
-                <div className="tags clearfix"><a href="#">Hipster</a><a href="#">Fashion</a><a href="#">Shirt</a><a href="#">Modern</a><a href="#">Vintage</a>
-                </div>
-              </div>
-              {/* <!-- end of widget      --> */}
+
             </div>
             {/* <!-- end of sidebar--> */}
     

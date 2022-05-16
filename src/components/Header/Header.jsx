@@ -116,7 +116,7 @@ const Header = () => {
             </div>
         </header>
 
-        <section className="page-title parallax">
+        {/* <section className="page-title parallax">
             <div data-parallax="scroll" data-image-src="images/bg/19.jpg" className="parallax-bg"></div>
             <div className="parallax-overlay">
                 <div className="centrize">
@@ -132,7 +132,7 @@ const Header = () => {
                 </div>
                 </div>
             </div>
-        </section>
+        </section> */}
     
     
     
