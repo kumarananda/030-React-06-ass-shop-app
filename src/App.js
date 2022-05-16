@@ -43,7 +43,7 @@ function App() {
         axios.get('http://localhost:5050/tags').then( res => {
           setTags( res.data);
         })
-      },[]);
+      },[])
 
       // get category data 
       useEffect( () => {
@@ -51,7 +51,7 @@ function App() {
         axios.get('http://localhost:5050/category').then( res => {
         setGetCat(res.data)
         })
-      },[]);
+      },[])
 
       // get category data 
       useEffect( () => {
@@ -59,7 +59,9 @@ function App() {
         axios.get('http://localhost:5050/products').then( res => {
           setProduct(res.data)
         })
-      },[]);
+      },[])
+
+      
 
     
 

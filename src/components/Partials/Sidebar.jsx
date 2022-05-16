@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-// import product from '../../_assets/images/shop/4.jpg'
+
 
 const Sidebar = ( {product, setProduct, getCat}) => {
 
