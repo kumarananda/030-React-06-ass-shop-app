@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 
-const Sidebar = ( {product, setProduct, getCat}) => {
+const Sidebar = ( {product, setProduct, getCat, tags }) => {
 
   const [ search, setSearch ] = useState('')
 
@@ -14,7 +14,7 @@ const Sidebar = ( {product, setProduct, getCat}) => {
       })
     }
 
-  },[])
+  },[product])
 
   // console.log(search);
 
@@ -28,6 +28,16 @@ const Sidebar = ( {product, setProduct, getCat}) => {
 
   }
 
+  // handle tag searce
+  const handleTagSeasch = (e, id) => {
+
+    e.preventDefault()
+
+    setSearch('')
+    axios.get(`http://localhost:5050/tags/${id}/products`).then( res => {
+      setProduct(res.data)
+    })
+  }
 
 
 
@@ -56,7 +66,15 @@ const Sidebar = ( {product, setProduct, getCat}) => {
               {/* <!-- end of widget        --> */}
               <div className="widget">
                 <h6 className="upper">Popular Tags</h6>
-                <div className="tags clearfix"><a href="#">Hipster</a><a href="#">Fashion</a><a href="#">Shirt</a><a href="#">Modern</a><a href="#">Vintage</a>
+                <div className="tags clearfix">
+                  {
+                    tags.map(data => 
+                      <a onClick={ e => handleTagSeasch(e, data.id) }  href="#">{data.name}</a>
+                    )
+                  }
+
+                  <a href="#">Hipster</a>
+
                 </div>
               </div>
               {/* <!-- end of widget      --> */}

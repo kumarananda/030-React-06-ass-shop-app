@@ -76,7 +76,7 @@ function App() {
         <Header/>
           <Routes>
             <Route path='/'element={ <Home/>} />
-            <Route path='/shop'element={ <Shop product={product } setProduct={setProduct} getCat={ getCat } />} />
+            <Route path='/shop'element={ <Shop tags={tags} product={product } setProduct={setProduct} getCat={ getCat } />} />
             <Route path='/shop/:slug'element={ <ProductSingle makeSlug={ makeSlug } />} />
             <Route path='/contact'element={ <Contact/>} />
 

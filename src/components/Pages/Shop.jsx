@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Sidebar from '../Partials/Sidebar'
 
-const Shop = ( {product, setProduct, getCat} ) => {
+const Shop = ( {product, setProduct, getCat, tags} ) => {
 
   // get params
   const prams = useParams();
@@ -16,7 +16,7 @@ const Shop = ( {product, setProduct, getCat} ) => {
         <div className="row">
           <div className="col-md-3 hidden-sm hidden-xs">
             
-              <Sidebar product={product} setProduct={setProduct} getCat={ getCat } ></Sidebar>
+              <Sidebar tags={tags} product={product} setProduct={setProduct} getCat={ getCat } ></Sidebar>
             
             
           </div>
