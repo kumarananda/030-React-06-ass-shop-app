@@ -36,6 +36,13 @@ function App() {
       return arr.join('-').toLowerCase();
     }
 
+    // find cat
+    const find_cat = (id) => {
+      axios('http://localhost:5050/category/' + id).then( () => {
+        //1.13
+      })
+    }
+
     // console.log(products);
       // get tags data 
       useEffect( () => {
