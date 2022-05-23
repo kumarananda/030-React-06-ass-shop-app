@@ -6,7 +6,7 @@ import axios from 'axios';
 import Rating from './Rating';
 
 
-const ProductSingle = ( {makeSlug}) => {
+const ProductSingle = ( {makeSlug, find_cat}) => {
 
     const {slug} = useParams();
 
@@ -116,7 +116,12 @@ const ProductSingle = ( {makeSlug}) => {
                         <ul>
                         <li><span>Sizes:</span> S, M, L, XL</li>
                         <li><span>Colors:</span> Blue, Red, Grey</li>
-                        <li><span>Category:</span><a href="#">Blazers</a>
+                        <li><span>Category:</span>
+                        <a href="#">
+                            { 
+                                find_cat(product.categoryId) 
+                            } 
+                        </a>
                         </li>
                         <li><span>Tags:</span><a href="#">Outfit</a>-<a href="#">Jeans</a>
                         </li>
