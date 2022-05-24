@@ -1,11 +1,10 @@
-import "./_assets/css/bundle.css";
-import "./_assets/css/style.css";
-import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Shop from "./components/Pages/Shop";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import ProductSingle from "./components/Pages/ProductSingle";
-import { Route, Routes } from "react-router-dom";
+
 import Home from "./components/Pages/Home";
 import Contact from "./components/Contact/Contact";
 import Dashbord from "./components/Admin/Dashbord";
@@ -15,9 +14,12 @@ import Tag from "./components/Admin/Tag";
 import Dash from "./components/Admin/Dash";
 import AddTag from "./components/Admin/AddTag";
 import ProductAdd from "./components/Admin/ProductAdd";
-import { useEffect, useState } from "react";
+
 import axios from "axios";
 import ProductEdit from "./components/Admin/ProductEdit";
+import "./_assets/css/bundle.css";
+import "./_assets/css/style.css";
+import "./App.css";
 
 function App() {
   // tag state
@@ -48,7 +50,7 @@ function App() {
     axios.get("http://localhost:5050/tags").then((res) => {
       setTags(res.data);
     });
-  }, [tags]);
+  }, []);
 
   // get category data
   useEffect(() => {
