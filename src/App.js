@@ -93,30 +93,11 @@ function App() {
 
         <Route path="/admin" element={<Dashbord />}>
           <Route path="/admin" element={<Dash />} />
-          <Route
-            path="/admin/products"
-            element={<Products product={product} />}
-          />
-          <Route
-            path="/admin/add-products"
-            element={
-              <ProductAdd tags={tags} getCat={getCat} makeSlug={makeSlug} />
-            }
-          />
-          <Route
-            path="/admin/edit-products/:id"
-            element={
-              <ProductEdit tags={tags} getCat={getCat} makeSlug={makeSlug} />
-            }
-          />
-          <Route
-            path="/admin/category"
-            element={<Category getCat={getCat} makeSlug={makeSlug} />}
-          />
-          <Route
-            path="/admin/tag"
-            element={<Tag tags={tags} makeSlug={makeSlug} />}
-          />
+          <Route path="/admin/products"  element={<Products product={product} />} />
+          <Route path="/admin/add-products" element={ <ProductAdd tags={tags} getCat={getCat} makeSlug={makeSlug} /> }/>
+          <Route path="/admin/edit-products/:id" element={ <ProductEdit tags={tags} getCat={getCat} makeSlug={makeSlug} /> } />
+          <Route path="/admin/category"  element={<Category getCat={getCat} makeSlug={makeSlug} />}/>
+          <Route path="/admin/tag" element={<Tag tags={tags} makeSlug={makeSlug} />} />
           <Route path="/admin/add-tag" element={<AddTag />} />
         </Route>
       </Routes>
