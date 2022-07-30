@@ -131,6 +131,18 @@
       "categoryId": 3,
       "tagsId": 1,
       "photo": "https://www.shodagor.com/wp-content/uploads/2020/02/1-600-5.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Walton",
+      "slug": "walton",
+      "reg_price": "16000",
+      "sale_peice": "15000",
+      "desc": "Provider of currency services intended to facilitate foreign exchange market transaction. The company's currency services utilise collaboration with internationally renowned banks and currency providers to offer express, spot and futures in 130 different currencies, international payments, risk management, hedging tools, online Forex trading, ",
+      "rating": 4,
+      "categoryId": 2,
+      "tagsId": 7,
+      "photo": "https://waltonbd.com/image/catalog/Computer/Monitor/front.png"
     }
   ],
   "category": [
@@ -205,6 +217,11 @@
       "id": 6,
       "name": "kids item",
       "slug": "kids-item"
+    },
+    {
+      "id": 7,
+      "name": "\tmonitor",
+      "slug": "\tmonitor"
     }
   ]
 }
